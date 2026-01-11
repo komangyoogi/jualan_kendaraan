@@ -68,4 +68,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/{id}', [TransaksiController::class, 'update']);     
     Route::delete('/{id}', [TransaksiController::class, 'delete']); 
     });
+
+#Pembayaran Routes
+    Route::prefix('pembayaran')->group(function () {
+    Route::get('/', [PembayaranController::class, 'index']);           
+    Route::post('/', [PembayaranController::class, 'create']);        
+    Route::get('/{id}', [PembayaranController::class, 'detail']);     
+    Route::put('/{id}', [PembayaranController::class, 'update']);     
+    Route::patch('/{id}', [PembayaranController::class, 'patch']);    
+    Route::delete('/{id}', [PembayaranController::class, 'delete']);  
+    });
 });
